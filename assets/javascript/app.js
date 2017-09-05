@@ -1,3 +1,8 @@
+// initialize Parallax
+$(document).ready(function(){
+      $('.parallax').parallax();
+    });
+
 var user = "hilzery";
 var queryURL = "https://igapi.ga/" + user + "/media?";
 
