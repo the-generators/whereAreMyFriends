@@ -5,12 +5,15 @@
 	height:600px; 
 	margin: 0 auto;
 }
+.parallax-container{
+	height: 600px;
+}
 h1{
 	font-size: 60px
 }
 #title{
 	text-align: center;
-	margin: 120px 0 0 0;
+	margin: 170px 0 0 0;
 }
 #fotterDiv{
 	text-align: center;
@@ -71,6 +74,6 @@ th, td{
 
 @media only screen and (max-width: 1256px){
 	#title{
-	margin: 70px 0 0 0;
+	margin: 120px 0 0 0;
 	}
 }
