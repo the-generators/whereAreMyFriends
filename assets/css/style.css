@@ -1,3 +1,80 @@
+
+/*map width and height. Jin*/
 #map {
-	height: 400px;
+	width:83%;
+	height:600px; 
+	margin: 0 auto;
 }
+.parallax-container{
+	height: 600px;
+}
+h1{
+	font-size: 60px
+}
+#title{
+	text-align: center;
+	margin: 170px 0 0 0;
+}
+#fotterDiv{
+	text-align: center;
+}
+form{
+	margin-bottom: 60px;
+}
+.mapRow{
+	background-color: black;
+	margin-bottom: 0;
+}
+.displayResultDiv{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#h1-title{
+	position: relative;
+	top: 100px;
+}
+.titleDiv{
+	position: relative;
+	top: 10px;
+}
+.input-field{
+	margin-top: 0;
+}
+.profile-img{
+	margin-top: 25px;
+}
+table{
+	margin-bottom: 30px;
+	/*background-color: #64ffda;*/
+}
+th, td{
+	border-bottom: 1px solid gray;
+}
+/*tbody{
+	background-color: #00bfa5;
+}*/
+.textWhite{
+	color: white;
+}
+.textBlack{
+	color: black;
+}
+.subText{
+	font-size: 18px;
+}
+.textCenter{
+	text-align: center;
+}
+.profile-pic-row{
+	margin-bottom: 0;
+}
+.h3{
+	margin-top: 0;
+}
+
+@media only screen and (max-width: 1256px){
+	#title{
+	margin: 120px 0 0 0;
+	}
+}
+
