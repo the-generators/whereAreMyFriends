@@ -1,6 +1,31 @@
 
 /*map width and height. Jin*/
 #map {
-	width:100%;
+	width:80%;
 	height:500px; 
-    }
+	margin: 0 auto;
+}
+h1{
+	font-size: 68px
+}
+#title{
+	text-align: center;
+	margin: 70px 0 0 0;
+}
+#fotterDiv{
+	text-align: center;
+}
+.titleRow{
+	background-color: gray;
+}
+form{
+	margin-bottom: 60px;
+}
+.mapRow{
+	background-color: black;
+}
+.displayResultDiv{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
