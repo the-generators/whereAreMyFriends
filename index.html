@@ -15,7 +15,7 @@
     <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' /> -->
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
     <!-- mapbox data -->
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
@@ -34,79 +34,111 @@
 
     <body>
 
-        <div class="parallax-container">
-          <div class="parallax">
-            <img src="assets/images/titleBg.jpg">
-            <h1 id="h1-title">ahieooi woiew eoiwieow</h1>
+      <div class="parallax-container">
+        <div class="container titleDiv">
+          <div class="row">
+            <div class="col s12">
+              <div id="title">
+                <h1>Where Are my Instagram Friends</h1>
+                <p>type your frind's instagram id to find out their past locations</p>
+              </div>
+            </div>
           </div>
-        </div>  
-
-        <div class="row titleRow">
-          <div class="col-sm-8 offset-sm-2">
-            <div id="title">
-              <h1>Where Are my Instagram Friends</h1>
-              <br>
-              <br>
-              <p>type your frind's instagram id to find out their past locations</p>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-6 offset-sm-3">
-                <form>
-                  <div class="form-group">
-                    <!-- <label for="instagram-input">type your fiend's instagram id: </label> -->
-                    <input class="form-control" type="text" id="instagram-input" >
-                  </div>
+          <div class="row">
+            <form class="col s6 offset-s3">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" id="instagram-input" >
+                  <label for="instagram-input">instagram id: </label>
                   <input type="submit" class="btn btn-md btn-primary" id="submit-btn" value="submit">
-                </form>
-              </div>
-            </div>
-          </div>  
-        </div>
-        <br>
-
-
-        <div class="row">
-          <div class="col-sm-10 offset-sm-2 displayResultDiv">
-            <div class="row">
-              <div class="col-sm-2">
-                <img class="img-fluid" src="assets/images/profile-pic.png" height=150>
-              </div>
-              <div class="col-sm-4">
-                <p>name and description here</p>
-              </div>
-
-              <div class="col-sm-6">
-                <div class="listDiv">
-                  list of places here
                 </div>
               </div>
-            </div>
+            </form>
+          </div>
+        </div>
+        <div class="parallax">
+          <img src="assets/images/titleBg.jpg">
+        </div>
+      </div>  
+
+      <div class="container-fluid">
+      <br><br>
+        <div class="row">
+          <div class="col s1 offset-s1">
+            <img class="responsive-img profile-img" src="assets/images/profile-pic.png" height=150>
+          </div>
+          <div class="col s8">
+            <h2>
+              Jeeny, Where have you been?
+            </h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s10 offset-s1">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th>City</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Japan</th>
+                  <th>Tokyo</th>
+                </tr>
+                  <th>Canada</th>
+                  <th>Vancouver</th>
+                <tr>
+                  <th>United States</th>
+                  <th>San Francisco</th>
+                </tr>
+                <tr>
+                  <th>United States</th>
+                  <th>Las Vegas</th>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <br>
 
         <div class="row mapRow">
-          <div class="col-sm-12">
+          <div class="col s12">
             <div id="mapDiv">
               <div id='map'></div>
             </div>
           </div>
         </div>
-        <br>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <div id="fotterDiv">
-              <p>made with love <br>
-              name1, name2, name3, name4</p>
-              <p>Copyright C 2017 All Rights Reserved.</p>
+      </div>
+
+     <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
             </div>
           </div>
         </div>
-        <br>
-        
-      </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
 
    	</body>
    	

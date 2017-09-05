@@ -1,8 +1,8 @@
 
 /*map width and height. Jin*/
 #map {
-	width:80%;
-	height:500px; 
+	width:83%;
+	height:600px; 
 	margin: 0 auto;
 }
 h1{
@@ -15,14 +15,12 @@ h1{
 #fotterDiv{
 	text-align: center;
 }
-.titleRow{
-	background-color: gray;
-}
 form{
 	margin-bottom: 60px;
 }
 .mapRow{
 	background-color: black;
+	margin-bottom: 0;
 }
 .displayResultDiv{
 	margin-top: 30px;
@@ -31,4 +29,17 @@ form{
 #h1-title{
 	position: relative;
 	top: 100px;
+}
+.titleDiv{
+	position: relative;
+	top: 10px;
+}
+.input-field{
+	margin-top: 0;
+}
+.profile-img{
+	margin-top: 25px;
+}
+table{
+	margin-bottom: 30px;
 }
