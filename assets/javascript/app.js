@@ -3,19 +3,19 @@ $(document).ready(function(){
       $('.parallax').parallax();
     });
 
-var user = "hilzery";
-var queryURL = "https://igapi.ga/" + user + "/media?";
+// var user = "hilzery";
+// var queryURL = "https://igapi.ga/" + user + "/media?";
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).done(function(response) {
-      console.log(response.items);
-      var i = 0;
-      var lastLocation = response.items[i].location.name;
-      console.log(lastLocation);
+//     $.ajax({
+//       url: queryURL,
+//       method: "GET"
+//     }).done(function(response) {
+//       console.log(response.items);
+//       var i = 0;
+//       var lastLocation = response.items[i].location.name;
+//       console.log(lastLocation);
 
-    });
+//     });
 
 // added mapbox data. JinS
 	mapboxgl.accessToken = 'pk.eyJ1IjoiamlubWFwIiwiYSI6ImNqNnp2ZDJiYjAwbWcyd3A3NzRpY29xaTIifQ.TXWFGOMd3WxlGzmRXGMzRA';
