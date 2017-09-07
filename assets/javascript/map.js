@@ -88,7 +88,6 @@ geojson.features.forEach(function(marker) {
 
 
 function addPin(longitude, latitude, image) {
-console.log(image);
     var geojson2 = {
     "type": "FeatureCollection",
     "features": [
@@ -112,7 +111,7 @@ console.log(image);
     };
 
     geojson2.features.forEach(function(marker) {
-        console.log(image);
+
     // create a DOM element for the marker
     var el = document.createElement('div');
     el.className = 'marker';
