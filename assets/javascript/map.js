@@ -1,5 +1,12 @@
+// initialize Parallax
+$(document).ready(function(){
+      $('.parallax').parallax();
+    });
+
+
 mapboxgl.accessToken = 'pk.eyJ1Ijoid2F0c2VyZmFjZSIsImEiOiJjajZ4MXFsOGYxaG14MzNycGlrZjc2aTV6In0.i1eqahI6l-ClT-EXrN-PcA';
 
+//
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v9',
