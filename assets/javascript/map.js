@@ -6,6 +6,55 @@ $(document).ready(function(){
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoid2F0c2VyZmFjZSIsImEiOiJjajZ4MXFsOGYxaG14MzNycGlrZjc2aTV6In0.i1eqahI6l-ClT-EXrN-PcA';
 
+var geojson = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "message": "Foo",
+                "iconSize": [60, 60]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -66.324462890625,
+                    -16.024695711685304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "message": "Bar",
+                "iconSize": [50, 50]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -61.2158203125,
+                    -15.97189158092897
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "message": "Baz",
+                "iconSize": [40, 40]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -63.29223632812499,
+                    -18.28151823530889
+                ]
+            }
+        }
+    ]
+};
+
+
 //
 var map = new mapboxgl.Map({
     container: 'map',
@@ -14,57 +63,40 @@ var map = new mapboxgl.Map({
     zoom: 9 // starting zoom
 });
 
-// var popup = new mapboxgl.Popup({closeOnClick: false})
-//     .setLngLat([-74.50, 40])
-//     .setHTML('<h1>Hello World!</h1>')
-//     .setHTML('<img src=assets/images/instagram.jpg>')
-//     .addTo(map);
 
 
+// add markers to map
+geojson.features.forEach(function(marker) {
+    // create a DOM element for the marker
+    var el = document.createElement('div');
+    el.className = 'marker';
+    el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+    el.style.width = marker.properties.iconSize[0] + 'px';
+    el.style.height = marker.properties.iconSize[1] + 'px';
 
-map.on('load', function(coordinates, profilePic) {
-
-    map.loadImage('https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21373019_114988352523105_8096550142267621376_n.jpg', function(error, image) {
-        if (error) throw error;
-        map.addImage('profilePic', image);
-        image.className = "modal-trigger";
-     	
-        console.log(image);
-        map.addLayer({
-            "id": "points",
-            "type": "symbol",
-            "source": {
-                "type": "geojson",
-                "data": {
-                    "type": "FeatureCollection",
-                    "features": [{
-                        "type": "Feature",
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [-74.50, 40]
-                        }
-                    }]
-                }
-            },
-            "layout": {
-                "icon-image": "profilePic",
-                "icon-size": 0.25
-            }
-        });
+    el.addEventListener('click', function() {
+        window.alert(marker.properties.message);
     });
-    console.log('here');
-    map.on('click', 'points', function(e) {
-   	 $('#modal1').modal();
-   	 console.log("jere");
 
-    });
+    // add marker to map
+    new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+});
+
+
+
+
+
+
+   
       map.on('mouseenter', 'points', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
        map.on('mouseleave', 'points', function () {
         map.getCanvas().style.cursor = '';
     });
-});
+
 
  $(document).ready(function(){
      $('.modal').modal();
