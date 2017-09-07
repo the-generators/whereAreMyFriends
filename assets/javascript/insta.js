@@ -9,9 +9,70 @@ var userId;
 var profilePic;
 var user;
 var firstName;
+// var slideShowDiv;
+var sliderWrapper = $(".slider-wrapper");
 
+
+
+
+	
+function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+}
+	
+Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+			
+			this.action();
+			this.stopStart();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+				
+			}, 5000);
+		},
+		stopStart: function() {
+			var self = this;
+			self.el.addEventListener( "mouseover", function() {
+				clearInterval( self.timer );
+				self.timer = null;
+				
+			}, false);
+			self.el.addEventListener( "mouseout", function() {
+				self.action();
+				
+			}, false);
+		}		
+};
+	
 
 function getUserStats(id) {
+
 	var queryURL2 = "https://api.instagram.com/v1/users/" + id + "/media/recent/?access_token=" + accessToken + "&callback=?";
 
 	$.ajax({
@@ -30,6 +91,7 @@ function getUserStats(id) {
 			var locationNameArray = [];
 			var imageArray = [];
 
+
 			console.log(response)
 
 		    if (response.data.length === 0) {
@@ -38,7 +100,8 @@ function getUserStats(id) {
 		    
 		    else {
 
-		    	$(".image-container").empty();		    	
+		    	$(".image-container").empty();
+		    	$(".slider-wrapper").empty();		    	
 		    	$(".first-name").text(firstName);
 	    		$(".profile-img").attr("src", profilePic);
 
@@ -53,31 +116,26 @@ function getUserStats(id) {
 				        longitude = response.data[i].location.longitude;
 				        locationName = response.data[i].location.name;
 				        image = response.data[i].images.standard_resolution.url;
-				        console.log(image);
 
 			    		latitudeArray.push(latitude);
 			    		longitudeArray.push(longitude);
 			    		locationNameArray.push(locationName);
 			    		imageArray.push(image);
 
-			    		if (imageArray.length <= 10) {
-				    		var div = $("<div class='inline'>");
-				    		var img = $("<img src='" + image + "' height=150 width=150>");
-				    		var loc = $("<p>" + locationName + "</p>");
-				    		div.append(img);
-				    		div.append(loc);
-				    		$(".image-container").append(div);
-				    		
-				    	}
+			    		slideShowDiv = $("<div class='slide-container slide' />");
+			    		imgSlide = $('<img src="' + image + '" alt="First">');
+			    		locSlide = $('<p>' + locationName + '</p>');
+			    		slideShowDiv.append(imgSlide);
+			    		slideShowDiv.append(locSlide);
+			    		sliderWrapper.append(slideShowDiv);
+
+						
 			    	}
 			    }
 		    } 
-		    console.log(latitudeArray[0]);
-		    console.log(longitudeArray[0]);
-		    console.log(imageArray[0]);
+var slider = new Slideshow( "#main-slider" );
 
 		    var mapImage = 'url("' + profilePic + '")';
-		    console.log(mapImage);
 
 		    for (var i = 0; i < latitudeArray.length; i++) {
 		    	addPin(longitudeArray[i], latitudeArray[i], mapImage);
@@ -89,7 +147,10 @@ function getUserStats(id) {
 
 $("#submit-btn").on("click", function(event) {
 
+
+
 	event.preventDefault();
+
 
 	user = $("#instagram-input").val().trim();
 	console.log(user);
