@@ -9,7 +9,7 @@ var userId;
 var profilePic;
 var user;
 var firstName;
-var slideShowDiv;
+// var slideShowDiv;
 var sliderWrapper = $(".slider-wrapper");
 
 
@@ -54,7 +54,7 @@ Slideshow.prototype = {
 				}
 				self._slideTo( self.index );
 				
-			}, 4000);
+			}, 5000);
 		},
 		stopStart: function() {
 			var self = this;
@@ -70,18 +70,6 @@ Slideshow.prototype = {
 		}		
 };
 	
-// document.addEventListener( "DOMContentLoaded", function() {
-		
-
-		
-// });	
-
-
-
-
-
-
-
 
 function getUserStats(id) {
 
@@ -133,15 +121,18 @@ function getUserStats(id) {
 			    		locationNameArray.push(locationName);
 			    		imageArray.push(image);
 
-
-			    		slideShowDiv = $('<img src="' + image + '" alt="First" class="slide" />');
+			    		slideShowDiv = $("<div class='slide-container slide' />");
+			    		imgSlide = $('<img src="' + image + '" alt="First">');
+			    		locSlide = $('<p>' + locationName + '</p>');
+			    		slideShowDiv.append(imgSlide);
+			    		slideShowDiv.append(locSlide);
 			    		sliderWrapper.append(slideShowDiv);
 
-						var slider = new Slideshow( "#main-slider" );
-
+						
 			    	}
 			    }
 		    } 
+var slider = new Slideshow( "#main-slider" );
 
 		    var mapImage = 'url("' + profilePic + '")';
 

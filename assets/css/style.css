@@ -86,7 +86,7 @@ th, td{
 /*>>>>>>>>slideshow styling:*/
 
 .slider {
-	width: 1024px;
+	width: 600px;
 	margin: 2em auto;
 	
 }
@@ -95,6 +95,13 @@ th, td{
 	width: 100%;
 	height: 400px;
 	position: relative;
+}
+
+.slide-container img {
+	width: 100%;
+	height: 400px;
+/*	position: relative;*/
+
 }
 
 .slide {
