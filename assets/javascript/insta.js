@@ -10,6 +10,11 @@ var profilePic;
 var user;
 var firstName;
 
+var latitudeArray = [];
+var longitudeArray = [];
+var locationNameArray = [];
+var imageArray = [];
+
 
 function getUserStats(id) {
 	var queryURL2 = "https://api.instagram.com/v1/users/" + id + "/media/recent/?access_token=" + accessToken + "&callback=?";
@@ -25,11 +30,7 @@ function getUserStats(id) {
 			var locationName;
 			var image;
 
-			var latitudeArray = [];
-			var longitudeArray = [];
-			var locationNameArray = [];
-			var imageArray = [];
-
+			
 			console.log(response)
 
 		    if (response.data.length === 0) {
@@ -67,11 +68,14 @@ function getUserStats(id) {
 				    		div.append(img);
 				    		div.append(loc);
 				    		$(".image-container").append(div);
+
 				    		
 				    	}
 			    	}
 			    }
 		    } 
+		    console.log(longitudeArray[0]);
+		    pinLocation();
 	});	
 }
 
@@ -103,6 +107,7 @@ $("#submit-btn").on("click", function(event) {
 
 
     		getUserStats(userId);
+    		    		pinLocation();
     	}
 
 
