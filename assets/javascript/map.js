@@ -55,6 +55,7 @@ var geojson = {
 };
 
 
+
 //
 var map = new mapboxgl.Map({
     container: 'map',
@@ -85,19 +86,61 @@ geojson.features.forEach(function(marker) {
 });
 
 
+function test(longitude, latitude, image, locName) {
 
+    var geojson2 = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "message": "Foo",
+                "iconSize": [60, 60]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    longitude,
+                    latitude
+                ]
+            }
+        }
+
+        
+    ]
+};
+
+    geojson2.features.forEach(function(marker) {
+    // create a DOM element for the marker
+    var el = document.createElement('div');
+    el.className = 'marker';
+    el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+    el.style.width = marker.properties.iconSize[0] + 'px';
+    el.style.height = marker.properties.iconSize[1] + 'px';
+
+    el.addEventListener('click', function() {
+        window.alert(marker.properties.message);
+    });
+
+    // add marker to map
+    new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+});
+
+}
 
 
 
    
-      map.on('mouseenter', 'points', function () {
-        map.getCanvas().style.cursor = 'pointer';
-    });
-       map.on('mouseleave', 'points', function () {
-        map.getCanvas().style.cursor = '';
-    });
+    //   map.on('mouseenter', 'points', function () {
+    //     map.getCanvas().style.cursor = 'pointer';
+    // });
+    //    map.on('mouseleave', 'points', function () {
+    //     map.getCanvas().style.cursor = '';
+    // });
 
 
- $(document).ready(function(){
-     $('.modal').modal();
-  });
+ // $(document).ready(function(){
+ //     $('.modal').modal();
+ //  });

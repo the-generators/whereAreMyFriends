@@ -72,6 +72,10 @@ function getUserStats(id) {
 			    	}
 			    }
 		    } 
+		    console.log(latitudeArray[0]);
+		    console.log(longitudeArray[0]);
+
+		    test(longitudeArray[0], latitudeArray[0]);
 	});	
 }
 
