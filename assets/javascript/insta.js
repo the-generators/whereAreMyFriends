@@ -74,8 +74,14 @@ function getUserStats(id) {
 		    } 
 		    console.log(latitudeArray[0]);
 		    console.log(longitudeArray[0]);
+		    console.log(imageArray[0]);
 
-		    test(longitudeArray[0], latitudeArray[0]);
+		    var mapImage = 'url("' + profilePic + '")';
+		    console.log(mapImage);
+
+		    for (var i = 0; i < latitudeArray.length; i++) {
+		    	addPin(longitudeArray[i], latitudeArray[i], mapImage);
+			}
 	});	
 }
 

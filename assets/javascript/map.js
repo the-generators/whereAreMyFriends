@@ -72,6 +72,7 @@ geojson.features.forEach(function(marker) {
     var el = document.createElement('div');
     el.className = 'marker';
     el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+        console.log(el.style.backgroundImage);
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
 
@@ -86,8 +87,8 @@ geojson.features.forEach(function(marker) {
 });
 
 
-function test(longitude, latitude, image, locName) {
-
+function addPin(longitude, latitude, image) {
+console.log(image);
     var geojson2 = {
     "type": "FeatureCollection",
     "features": [
@@ -107,14 +108,16 @@ function test(longitude, latitude, image, locName) {
         }
 
         
-    ]
-};
+        ]
+    };
 
     geojson2.features.forEach(function(marker) {
+        console.log(image);
     // create a DOM element for the marker
     var el = document.createElement('div');
     el.className = 'marker';
-    el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+    el.style.backgroundImage = image;
+    console.log(el.style.backgroundImage);
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
 
