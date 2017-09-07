@@ -72,6 +72,17 @@ th, td{
 	margin-top: 0;
 }
 
+.image-container {
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.inline {
+	display: inline;
+	padding: 5px;
+}
+
 @media only screen and (max-width: 1256px){
 	#title{
 	margin: 120px 0 0 0;
