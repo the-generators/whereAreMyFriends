@@ -100,7 +100,8 @@ function getUserStats(id) {
 		    
 		    else {
 
-		    	$(".image-container").empty();		    	
+		    	$(".image-container").empty();
+		    	$(".slider-wrapper").empty();		    	
 		    	$(".first-name").text(firstName);
 	    		$(".profile-img").attr("src", profilePic);
 
