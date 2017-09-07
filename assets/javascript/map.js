@@ -36,6 +36,7 @@ map.on('load', function(coordinates, profilePic) {
                             "type": "Point",
                             "coordinates": [-74.50, 40]
                         }
+
                     }]
                 }
             },
