@@ -68,11 +68,12 @@ function getAllUrlParams(url) {
       }
     }
   }
+  user = obj.username;
 
-  return obj;
 }
 
-console.log(getAllUrlParams);
+
+getAllUrlParams();
 
 function getUserStats(id) {
 	var queryURL2 = "https://api.instagram.com/v1/users/" + id + "/media/recent/?access_token=" + accessToken + "&callback=?";
@@ -139,13 +140,9 @@ function getUserStats(id) {
 }
 
 
-$( document ).ready(){
-	// event.preventDefault();
+$(document).ready(function(){
 
-	user = $("#instagram-input").val().trim();
-	console.log(user);
-
-	var queryURL1 = "https://api.instagram.com/v1/users/search?q=" + user + "&access_token=" + accessToken + "&callback=?";
+  var queryURL1 = "https://api.instagram.com/v1/users/search?q=" + user + "&access_token=" + accessToken + "&callback=?";
 
     $.ajax({
     	url: queryURL1,
@@ -169,4 +166,4 @@ $( document ).ready(){
 
     });
 
-}
+});
