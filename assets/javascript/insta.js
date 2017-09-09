@@ -207,6 +207,17 @@ var slider = new Slideshow( "#main-slider" );
 	});	
 }
 
+// $("#results-submit").on("click", function(event) {
+// alert("test");
+
+
+//   // event.preventDefault();
+
+
+//   user = $("#instagram-input").val().trim();
+//   console.log(user);
+// });
+
 
 $(document).ready(function(){
 

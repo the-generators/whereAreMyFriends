@@ -22,15 +22,30 @@
    
     <!-- my style css file -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
     </head>
-<div class="container-fluid teal accent-2">
+
+<body>
+
+  <div class="container-fluid teal accent-2">
       <br><br>
+      <div class="row">
+        <form class="col s6 offset-s3" action="results.html" method="GET">
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" id="instagram-input" name="username">
+              <label for="instagram-input">enter instagram id: </label>
+              <input type="submit" class="btn btn-md btn-primary" id="submit-btn" value="submit">
+            </div>
+          </div>
+        </form>
+      </div>
+        
         <div class="row profile-pic-row">
           <div class="col s2 offset-s5">
             <img class="responsive-img profile-img" src="assets/images/profile-pic.png" height=150>
           </div>
         </div>
+        
         <div class="row">
           <div class="col s8 offset-s2 textCenter">
             <h3 class="h3"><span class="first-name">Jenny</span>, Where have you been?</h3>
@@ -43,11 +58,9 @@
           <div class="col s10 offset-s1">
             <table class="bordered">
 
-              <div class="slider" id="main-slider"><!-- outermost container element -->
-                <div class="slider-wrapper"><!-- innermost wrapper element -->
-<!--              <img src="http://lorempixel.com/1024/400/animals" alt="First" class="slide" />
-                  <img src="http://lorempixel.com/1024/400/business" alt="Second" class="slide" />
-                  <img src="http://lorempixel.com/1024/400/city" alt="Third" class="slide" /> -->
+              <div class="slider" id="main-slider">
+                <div class="slider-wrapper">
+
                 </div>
               </div> 
 
@@ -55,6 +68,7 @@
             </table>
           </div>
         </div>
+        
         <br>
 
         <div class="row mapRow">
@@ -79,7 +93,7 @@
           </div>
         </div>
 
-      </div>
+  </div>
 
 
      <footer class="page-footer teal accent-2">
@@ -109,7 +123,7 @@
       </footer>
 
 
-   	</body>
+</body>
    	
    	<script type="text/javascript" src="assets/javascript/insta.js"></script>
     <script type="text/javascript" src="assets/javascript/map.js"></script>
