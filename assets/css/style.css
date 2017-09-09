@@ -117,6 +117,9 @@ th, td{
 	opacity: 1;
 }
 
+#profile-img {
+    border-radius: 50%;
+}
 /*>>>>>>>> end of slideshow styling:*/
 
 @media only screen and (max-width: 1256px){
