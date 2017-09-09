@@ -13,11 +13,18 @@ var geojson = {
     ]
 };
 
-// Set bounds to United States
-var bounds = [
-    [-128.71582031000003, 22.5995379928176], // Southwest coordinates
-    [-57.172851560000026, 51.667418018116805]  // Northeast coordinates
-];
+/*// Sets bounds to United States
+var us_bounds = [
+     [-128.71582031000003, 22.5995379928176], // Southwest coordinates
+     [-57.172851560000026, 51.667418018116805]  // Northeast coordinates
+];*/
+
+// Sets bounds to the World
+var world_bounds = [
+	[-180,-90],
+	[180,90]
+]
+
 
 
 var map = new mapboxgl.Map({
