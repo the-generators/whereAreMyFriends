@@ -13,17 +13,18 @@ var geojson = {
     ]
 };
 
-
-
-//
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v9',
     center: [-74.50, 40], // starting position [lng, lat]
-    zoom: 9 // starting zoom
+    maxzoom: 9 // starting zoom
 });
 
+// disable map rotation using right click + drag
+map.dragRotate.disable();
 
+// disable map rotation using touch rotation gesture
+map.touchZoomRotate.disableRotation();
 
 // add markers to map
 geojson.features.forEach(function(marker) {
