@@ -13,17 +13,27 @@ var geojson = {
     ]
 };
 
+// Set bounds to United States
+var bounds = [
+    [-128.71582031000003, 22.5995379928176], // Southwest coordinates
+    [-57.172851560000026, 51.667418018116805]  // Northeast coordinates
+];
 
 
-//
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v9',
-    center: [-74.50, 40], // starting position [lng, lat]
-    zoom: 9 // starting zoom
+  	//center: [,] // starting position [lng, lat]
+    zoom: 0, // starting zoom
+    maxBounds: bounds
 });
 
 
+// disable map rotation using right click + drag
+map.dragRotate.disable();
+
+// disable map rotation using touch rotation gesture
+map.touchZoomRotate.disableRotation();
 
 // add markers to map
 geojson.features.forEach(function(marker) {
