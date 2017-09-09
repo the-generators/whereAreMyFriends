@@ -20,32 +20,46 @@ var latitudeArray = [];
 var longitudeArray = [];
 var locationNameArray = [];
 var imageArray = [];
+var start = '<a id="auto" onclick="switchAutoAdvance()" class="group2-Play" title="Play"></a>';
+var pause = '<a id="auto" onclick="switchAutoAdvance()" class="group2-Pause" title="Pause"></a>';
 
-
-
+var sliderFrame = document.getElementById("sliderFrame");
+var slideContainer = document.getElementById("slider");
+// var sliderClass = $(".slider");
 
 
 function populateSlider() {
             //Note: If the slider container has been set as invisible(e.g. display:none;), make sure set it visible before reload the imageSlider
+
   setSliderMarkup();
   imageSlider.reload();
 }
         
-function setSliderMarkup() {
-          
-  var sliderFrame = document.getElementById("sliderFrame");
-            
+function setSliderMarkup() {            
   for(var i = 0; i < imageArray.length; i++) {
 
     var sliderImg = '<img src="'+ imageArray[i] +'" alt="'+ locationNameArray[i] +'" />';
-    console.log(sliderImg);
     sliderImgGroup = sliderImgGroup + sliderImg;
 
   }
 
-  sliderFrame.innerHTML = '<div id="slider">'+ sliderImgGroup + '</div>';
+  slideContainer.innerHTML = sliderImgGroup;
 }
 
+function switchAutoAdvance() {
+  // populateSlider();
+  imageSlider.switchAuto();
+  switchPlayPauseClass();
+}
+
+function switchPlayPauseClass() {
+  var auto = document.getElementById('auto');
+  var isAutoPlay = imageSlider.getAuto();
+  auto.className = isAutoPlay ? "group2-Pause" : "group2-Play";
+  auto.title = isAutoPlay ? "Pause" : "Play";
+}
+
+switchPlayPauseClass();
 
 
 
@@ -156,6 +170,9 @@ function getUserStats(id) {
 			    	}
 			    }
 		    } 
+
+populateSlider();
+
 
 		    var mapImage = 'url("' + profilePic + '")';
 
