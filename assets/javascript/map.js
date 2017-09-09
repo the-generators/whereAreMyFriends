@@ -18,7 +18,7 @@ var geojson = {
 //
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/dark-v9',
+    style: 'mapbox://styles/mapbox/basic-v9',
     center: [-74.50, 40], // starting position [lng, lat]
     zoom: 9 // starting zoom
 });
