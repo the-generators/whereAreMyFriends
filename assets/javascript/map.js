@@ -32,7 +32,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/basic-v9',
   	//center: [,] // starting position [lng, lat]
     zoom: 0, // starting zoom
-    maxBounds: bounds
+    maxBounds: world_bounds
 });
 
 
