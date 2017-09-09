@@ -36,7 +36,7 @@
       <div class="nav-wrapper">
         <form>
           <div class="input-field">
-            <input id="search" type="search" placeholder="enter instagram id" required>
+            <input id="instagram-input" type="search" placeholder="enter instagram id" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div>
@@ -57,18 +57,29 @@
                 <p class="subText">These are some places <span class="first-name">Jenny</span> has been!</p>
                 </div>
             </div>
+            
             <div class="row">
               <div class="col s12">
-                <div class="pictures">
-                  <div id="sliderFrame">
+                
+                <div id="sliderFrame">
+                  <div id="slider"></div>
+                <!--Custom navigation buttons on both sides-->
+                  <div class="group1-Wrapper">
+                    <a onclick="imageSlider.previous()" class="group1-Prev"></a>
+                    <a onclick="imageSlider.next()" class="group1-Next"></a>
                   </div>
-                  <div id="slider-button-container">
-                    <input class="btn  light-blue " type="button" onclick="populateSlider()" value="Click to Populate Slider" />
+                  <div style="text-align:center;padding:20px;z-index:20;">
+<!--                <a onclick="imageSlider.previous()" class="group2-Prev"></a> -->
+                    <a id='auto' onclick="switchAutoAdvance()"></a>
+<!--                <a onclick="imageSlider.next()" class="group2-Next"></a> -->
                   </div>
                 </div>
+              
               </div>
             </div>
-          </div>
+          
+       </div>
+       
           <!-- map -->
           <!-- <div class="col s8 paddingNone"> -->
             <!-- <div class="row "> -->
