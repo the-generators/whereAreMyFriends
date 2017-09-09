@@ -22,9 +22,9 @@ var bounds = [
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/dark-v9',
+    style: 'mapbox://styles/mapbox/basic-v9',
   	//center: [,] // starting position [lng, lat]
-    zoom: 0, // starting zoom
+    zoom: 0 // starting zoom
     maxBounds: bounds
 });
 
