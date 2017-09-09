@@ -139,7 +139,7 @@ function getUserStats(id) {
 	}).done(function(response) {
 
 
-
+console.log(response);
 
 		    if (response.data.length === 0) {
 		    	alert(user + " has not gone places lately");
@@ -160,7 +160,7 @@ function getUserStats(id) {
 				    	latitude = response.data[i].location.latitude;
 				      longitude = response.data[i].location.longitude;
 				      locationName = response.data[i].location.name;
-				      image = response.data[i].images.standard_resolution.url;
+				      image = response.data[i].images.low_resolution.url;
 
 			    		latitudeArray.push(latitude);
 			    		longitudeArray.push(longitude);
