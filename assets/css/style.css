@@ -63,6 +63,7 @@ th, td{
 .subText{
 	font-size: 18px;
 	margin-top: 40px;
+	text-align: center;
 }
 .textCenter{
 	text-align: center;
@@ -173,4 +174,7 @@ th, td{
 }
 .page-footer{
 	padding-bottom: 20px;
+}
+body{
+	background-color: black;
 }
