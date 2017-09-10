@@ -2,11 +2,12 @@
 
 #sliderFrame, #sliderFrame div {
     box-sizing: content-box;
-    
+
 }
 #sliderFrame 
 {
     position:relative;
+    bottom: 10px;
 /*    background-color:white;*/
 
 }      

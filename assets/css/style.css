@@ -1,15 +1,36 @@
+.slide-container {
+/*	margin-top: 175px;*/
+}
 
+
+#name-header {
+	background-color: #2d5b81;
+	color: white;
+	font-family: "Helvetica Neue";
+	letter-spacing: 3px;
+}
 /*map width and height. Jin*/
 #map {
 	width:100%;
 	height:870px; 
 	margin: 0 auto;
 }
+
+
 /*.parallax-container{
 	height: 600px;
 }*/
 h1{
 	font-size: 60px
+}
+
+h3 {
+	width: 100%;
+	font-size: 200%
+}
+
+p {
+	font-family: "Helvetica Neue";
 }
 #title{
 	text-align: center;
@@ -63,7 +84,9 @@ th, td{
 .subText{
 	font-size: 18px;
 	margin-top: 5px;
+  margin-bottom:20px;
 	text-align: center;
+  color: grey;
 }
 .textCenter{
 	text-align: center;
@@ -86,44 +109,6 @@ th, td{
 	padding: 5px;
 }
 
-/*>>>>>>>>slideshow styling:*/
-
-.slider {
-	width: 600px;
-	margin: 2em auto;
-	
-}
-
-.slider-wrapper {
-	width: 100%;
-	height: 400px;
-	position: relative;
-}
-
-.slide-container img {
-	width: 100%;
-	height: 400px;
-/*	position: relative;*/
-
-}
-
-.slide {
-	float: left;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transition: opacity 3s linear;
-}
-
-.slider-wrapper > .slide:first-child {
-	opacity: 1;
-}
-
-#profile-img {
-    border-radius: 50%;
-}
-/*>>>>>>>> end of slideshow styling:*/
 
 @media only screen and (max-width: 1256px){
 	#title{
@@ -159,7 +144,7 @@ th, td{
 	min-width: 545px;
 }
 .profileCol{
-	background-color: #ededed;
+	background-color: #ffffff;
 	height: 870px;
 	width: 33.333%;
 	border-right: 1px solid black;

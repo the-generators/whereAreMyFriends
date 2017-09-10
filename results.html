@@ -36,7 +36,7 @@
       <div class="nav-wrapper">
         <form>
           <div class="input-field">
-            <input type="search" id="instagram-input" name="username" placeholder="enter instagram username">
+            <input type="search" id="instagram-input" name="username" placeholder="enter Instagram username">
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div>
@@ -48,8 +48,17 @@
         <!-- <div class="row"> -->
           <!-- profile column -->
           <div class="col s4 profileCol">
+            
+            <div class="row" id="name-header">
+              <div class="col s12">
+                
+                <h3 class="center-align"><span class="user-name"></span></h3>
+
+              </div>
+            </div>
+            
             <div class="row">
-              <div class="col s4 offset-s4">
+              <div class="col s12 center-align">
                 <img class="responsive-img profile-img circle" src="assets/images/profile-pic.jpg" height=150>
               </div>
               <!-- <div class="col s8">
@@ -57,26 +66,27 @@
                 </div> -->
             </div>
             <div class="row">
-              <p class="subText">These are some places <span class="first-name">you</span> has been!</p>
+              <p class="subText">Here are the places <span class="first-name"></span> has been! </p>
             </div>
             
             <div class="row">
               <div class="col s12">
-                
-                <div id="sliderFrame">
-                  <div id="slider"></div>
-                <!--Custom navigation buttons on both sides-->
-<!--                   <div class="group1-Wrapper">
-                    <a onclick="imageSlider.previous()" class="group1-Prev"></a>
-                    <a onclick="imageSlider.next()" class="group1-Next"></a>
-                  </div> -->
-                  <div style="text-align:center;padding:20px;z-index:20;">
-<!--                <a onclick="imageSlider.previous()" class="group2-Prev"></a> -->
-                    <a id='auto' onclick="switchAutoAdvance()"></a>
-<!--                <a onclick="imageSlider.next()" class="group2-Next"></a> -->
+                <div class="slide-container"> 
+                  <div id="sliderFrame">
+                    <p class="subText">Press the Play button to start slide show: </p>
+                    <div id="slider"></div>
+                  <!--Custom navigation buttons on both sides-->
+  <!--                   <div class="group1-Wrapper">
+                      <a onclick="imageSlider.previous()" class="group1-Prev"></a>
+                      <a onclick="imageSlider.next()" class="group1-Next"></a>
+                    </div> -->
+                    <div style="text-align:center;padding:20px;z-index:20;">
+  <!--                <a onclick="imageSlider.previous()" class="group2-Prev"></a> -->
+                      <a id='auto' onclick="switchAutoAdvance()"></a>
+  <!--                <a onclick="imageSlider.next()" class="group2-Next"></a> -->
+                    </div>
                   </div>
                 </div>
-              
               </div>
             </div>
           

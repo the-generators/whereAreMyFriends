@@ -7,6 +7,7 @@ var accessToken = "298408134.5108270.5e9103a09269400f832a386f5319a114";
 
 var userId;
 var profilePic;
+var userName;
 var user;
 var firstName;
 var sliderImgGroup = "";
@@ -148,6 +149,7 @@ console.log(response);
 		    else {
 	    	
 		    	$(".first-name").text(firstName);
+          $(".user-name").text(userName.toUpperCase());
 	    		$(".profile-img").attr("src", profilePic);
 
 
@@ -161,6 +163,7 @@ console.log(response);
 				      longitude = response.data[i].location.longitude;
 				      locationName = response.data[i].location.name;
 				      image = response.data[i].images.low_resolution.url;
+
 
 			    		latitudeArray.push(latitude);
 			    		longitudeArray.push(longitude);
@@ -196,12 +199,15 @@ $(document).ready(function(){
     	dataType: "jsonp"
     }).done(function(response) {
 
+      console.log(response.data);
+
     	if ((response.meta.code === 400) || (response.data.length === 0)) {
     		alert(user + " cannot be found");
 
     	} else {
 	    	userId = response.data[0].id;
 	    	profilePic = response.data[0].profile_picture;
+        userName = response.data[0].username;
 	    	var fullName= response.data[0].full_name;
 	    	firstName = fullName.split(" ")[0];
 
