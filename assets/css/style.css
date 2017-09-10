@@ -62,7 +62,7 @@ th, td{
 }
 .subText{
 	font-size: 18px;
-	margin-top: 40px;
+	margin-top: 5px;
 	text-align: center;
 }
 .textCenter{
@@ -146,9 +146,7 @@ th, td{
 		font-size: 35px;
 	}
 }
-.nav-wrapper{
-	border-bottom: 1px solid black;
-}
+
 .entranceImg{
 	position: absolute;
 	top: 0;
@@ -177,4 +175,7 @@ th, td{
 }
 body{
 	background-color: black;
+}
+li{
+	padding-bottom: 5px;
 }
