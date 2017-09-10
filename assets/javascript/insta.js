@@ -157,7 +157,7 @@ console.log(response);
 
 
 
-		    	for (var i = 0; i < 20; i++) {
+		    	for (var i = 0; i < response.data.length; i++) {
 
 		    		if (response.data[i].location != null) {
 
