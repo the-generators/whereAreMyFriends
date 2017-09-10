@@ -138,19 +138,22 @@ function getUserStats(id) {
 	        type: "GET",
 	        dataType: "jsonp"
 	}).done(function(response) {
-
+          
+          $(".first-name").text(firstName);
+          $(".user-name").text(userName.toUpperCase());
+          $(".profile-img").attr("src", profilePic);
 
 console.log(response);
 
 		    if (response.data.length === 0) {
-		    	alert(user + " has not gone places lately");
+          $("#has-been-clause").text(user + " has not been anywhere lately");
+          $("#sliderFrame").empty();
 		    }
 		    
 		    else {
 	    	
-		    	$(".first-name").text(firstName);
-          $(".user-name").text(userName.toUpperCase());
-	    		$(".profile-img").attr("src", profilePic);
+
+
 
 
 
@@ -172,9 +175,11 @@ console.log(response);
               						
 			    	}
 			    }
-		    } 
+		    populateSlider();
 
-populateSlider();
+        } 
+
+
 
 
 		    var mapImage = 'url("' + profilePic + '")';
@@ -202,7 +207,8 @@ $(document).ready(function(){
       console.log(response.data);
 
     	if ((response.meta.code === 400) || (response.data.length === 0)) {
-    		alert(user + " cannot be found");
+        $("#has-been-clause").text("The username " + user + " cannot be found. Please try a different name.");
+        $("#sliderFrame").empty();
 
     	} else {
 	    	userId = response.data[0].id;
