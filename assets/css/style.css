@@ -164,3 +164,21 @@ body{
 li{
 	padding-bottom: 5px;
 }
+@media only screen and (max-width: 1000px){
+	.profileCol{
+		height: 820px;
+		width: 100%;
+	}
+	#mapDiv{
+		position: static;
+		top: 0;
+		width: 80%;
+		border-bottom: 1px solid white;
+		margin: 0 auto;
+		padding-bottom: 40px;
+	}
+	#map{
+		height: 500px;
+		}
+	}
+}
