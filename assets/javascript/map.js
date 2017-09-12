@@ -42,25 +42,7 @@ map.dragRotate.disable();
 // disable map rotation using touch rotation gesture
 map.touchZoomRotate.disableRotation();
 
-// add markers to map
-geojson.features.forEach(function(marker) {
-    // create a DOM element for the marker
-    var el = document.createElement('div');
-    el.className = 'marker';
-    el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
-        console.log(el.style.backgroundImage);
-    el.style.width = marker.properties.iconSize[0] + 'px';
-    el.style.height = marker.properties.iconSize[1] + 'px';
 
-    el.addEventListener('click', function() {
-        window.alert(marker.properties.message);
-    });
-
-    // add marker to map
-    new mapboxgl.Marker(el)
-        .setLngLat(marker.geometry.coordinates)
-        .addTo(map);
-});
 
 
 function addPin(longitude, latitude, image) {
@@ -70,8 +52,8 @@ function addPin(longitude, latitude, image) {
         {
             "type": "Feature",
             "properties": {
-                "message": "Foo",
-                "iconSize": [60, 60]
+                "message": locationName,
+                "iconSize": [17, 17]
             },
             "geometry": {
                 "type": "Point",
@@ -94,9 +76,10 @@ function addPin(longitude, latitude, image) {
     el.style.backgroundImage = image;
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
+   
 
     el.addEventListener('click', function() {
-        window.alert(marker.properties.message);
+        window.modal(marker.properties.message);
     });
 
     // add marker to map
