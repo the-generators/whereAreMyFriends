@@ -4,7 +4,7 @@ $(document).ready(function(){
     });
 
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoid2F0c2VyZmFjZSIsImEiOiJjajZ4MXFsOGYxaG14MzNycGlrZjc2aTV6In0.i1eqahI6l-ClT-EXrN-PcA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiaGlsbGFyeWVsbGlzMzciLCJhIjoiY2o3aDBxejVyMWNrYzJ2cGp5ZGgycmQ1bSJ9.0_KVw461XpanOuz5xrLRMQ';
 
 var geojson = {
     "type": "FeatureCollection",
@@ -29,7 +29,7 @@ var world_bounds = [
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/basic-v9',
+    style: 'mapbox://styles/hillaryellis37/cj7h31mzu4ahr2ro0uw68r30p',
   	//center: [,] // starting position [lng, lat]
     zoom: 0, // starting zoom
     maxBounds: world_bounds
@@ -45,7 +45,7 @@ map.touchZoomRotate.disableRotation();
 
 
 
-function addPin(longitude, latitude, image) {
+function addPin(longitude, latitude, pinImage, location, locImage) {
     var geojson2 = {
     "type": "FeatureCollection",
     "features": [
@@ -73,27 +73,42 @@ function addPin(longitude, latitude, image) {
     // create a DOM element for the marker
     var el = document.createElement('div');
     el.className = 'marker';
-    el.style.backgroundImage = image;
+    el.style.backgroundImage = pinImage;
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
    
 
-    el.addEventListener('click', function() {
-        window.alert(marker.properties.message);
-    });
 
     // add marker to map
     new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
-        .addTo(map);
+        .setPopup(
+      new mapboxgl.Popup({ offset: 0 }) // add popups
+      .setHTML('<h3>' + location + '</h3>')
 
+  )
+  .addTo(map);
+      
 
-      // new mapboxgl.Popup({ offset: 0 }) // add popups
-      // .setHTML('<h3>' + locationName + '</h3>')
-      // .addTo(map);
 });
 
+
+    map.on('mouseenter', 'places', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'places', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+
 }
+
+   
+
+
+
 
 
 
