@@ -183,6 +183,7 @@ console.log(response);
 
 
 		    var mapImage = 'url("' + profilePic + '")';
+        console.log(profilePic);
 
 
 		    for (var i = 0; i < latitudeArray.length; i++) {

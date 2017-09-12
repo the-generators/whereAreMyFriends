@@ -92,7 +92,6 @@ function addPin(longitude, latitude, image) {
     var el = document.createElement('div');
     el.className = 'marker';
     el.style.backgroundImage = image;
-    console.log(el.style.backgroundImage);
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
 
