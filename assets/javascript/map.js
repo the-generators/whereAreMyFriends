@@ -4,7 +4,7 @@ $(document).ready(function(){
     });
 
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoid2F0c2VyZmFjZSIsImEiOiJjajZ4MXFsOGYxaG14MzNycGlrZjc2aTV6In0.i1eqahI6l-ClT-EXrN-PcA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiaGlsbGFyeWVsbGlzMzciLCJhIjoiY2o3aDBxejVyMWNrYzJ2cGp5ZGgycmQ1bSJ9.0_KVw461XpanOuz5xrLRMQ';
 
 var geojson = {
     "type": "FeatureCollection",
@@ -29,7 +29,7 @@ var world_bounds = [
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/basic-v9',
+    style: 'mapbox://styles/hillaryellis37/cj7h31mzu4ahr2ro0uw68r30p',
   	//center: [,] // starting position [lng, lat]
     zoom: 0, // starting zoom
     maxBounds: world_bounds
