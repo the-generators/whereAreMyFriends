@@ -67,24 +67,6 @@ function buildMap(){
 
 };
 
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/basic-v9',
-  	//center: [,] // starting position [lng, lat]
-    zoom: 0, // starting zoom
-    maxBounds: world_bounds
-});
-
-
-// disable map rotation using right click + drag
-map.dragRotate.disable();
-
-// disable map rotation using touch rotation gesture
-map.touchZoomRotate.disableRotation();
-
-
-
-
 function addPin(longitude, latitude, image) {
     var geojson2 = {
     "type": "FeatureCollection",
