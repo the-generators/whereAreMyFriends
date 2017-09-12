@@ -139,7 +139,7 @@ function getUserStats(id) {
 	        dataType: "jsonp"
 	}).done(function(response) {
           
-          $(".first-name").text(firstName);
+          $(".first-name").text(userName);
           $(".user-name").text(userName.toUpperCase());
           $(".profile-img").attr("src", profilePic);
 
