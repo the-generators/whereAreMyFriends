@@ -86,7 +86,7 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
         .setLngLat(marker.geometry.coordinates)
         .setPopup(
       new mapboxgl.Popup({ offset: 0 }) // add popups
-      .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + image + '"' + '></img>')
+      .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + locImage + '"' + '></img>')
 
       
 
