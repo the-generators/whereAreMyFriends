@@ -17,6 +17,7 @@ var longitude;
 var locationName;
 var image;
 
+
 var latitudeArray = [];
 var longitudeArray = [];
 var locationNameArray = [];
@@ -181,8 +182,8 @@ console.log(response);
 
 
 
-
-		    var mapImage = 'url("' + profilePic + '")';
+        var mapMarker = "assets/images/map-marker.png";
+		    var mapImage = 'url("' + mapMarker + '")';
 
 
 		    for (var i = 0; i < latitudeArray.length; i++) {
