@@ -53,7 +53,7 @@ function addPin(longitude, latitude, image) {
             "type": "Feature",
             "properties": {
                 "message": locationName,
-                "iconSize": [17, 17]
+                "iconSize": [19, 16]
             },
             "geometry": {
                 "type": "Point",
@@ -80,13 +80,18 @@ function addPin(longitude, latitude, image) {
    
 
     el.addEventListener('click', function() {
-        window.modal(marker.properties.message);
+        window.alert(marker.properties.message);
     });
 
     // add marker to map
     new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
         .addTo(map);
+
+
+      // new mapboxgl.Popup({ offset: 0 }) // add popups
+      // .setHTML('<h3>' + locationName + '</h3>')
+      // .addTo(map);
 });
 
 }
@@ -94,14 +99,7 @@ function addPin(longitude, latitude, image) {
 
 
    
-    //   map.on('mouseenter', 'points', function () {
-    //     map.getCanvas().style.cursor = 'pointer';
-    // });
-    //    map.on('mouseleave', 'points', function () {
-    //     map.getCanvas().style.cursor = '';
-    // });
+    
 
 
- // $(document).ready(function(){
- //     $('.modal').modal();
- //  });
+ 
