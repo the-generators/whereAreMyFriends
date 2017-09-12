@@ -47,12 +47,14 @@ map.touchZoomRotate.disableRotation();
 
 function addPin(longitude, latitude, pinImage, location, locImage) {
     var geojson2 = {
+    "id": "places",
     "type": "FeatureCollection",
     "features": [
         {
             "type": "Feature",
             "properties": {
-                "message": locationName,
+                "imageUrl": image,
+                "message": locationName, 
                 "iconSize": [19, 16]
             },
             "geometry": {
@@ -84,12 +86,14 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
         .setLngLat(marker.geometry.coordinates)
         .setPopup(
       new mapboxgl.Popup({ offset: 0 }) // add popups
-      .setHTML('<h3>' + location + '</h3>')
+      .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + image + '"' + '></img>')
+
+      
 
   )
   .addTo(map);
       
-
+console.log("yo");
 });
 
 
