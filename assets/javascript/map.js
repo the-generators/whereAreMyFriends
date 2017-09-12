@@ -45,7 +45,7 @@ map.touchZoomRotate.disableRotation();
 
 
 
-function addPin(longitude, latitude, image) {
+function addPin(longitude, latitude, pinImage, location, locImage) {
     var geojson2 = {
     "type": "FeatureCollection",
     "features": [
@@ -73,27 +73,42 @@ function addPin(longitude, latitude, image) {
     // create a DOM element for the marker
     var el = document.createElement('div');
     el.className = 'marker';
-    el.style.backgroundImage = image;
+    el.style.backgroundImage = pinImage;
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
    
 
-    el.addEventListener('click', function() {
-        window.alert(marker.properties.message);
-    });
 
     // add marker to map
     new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
-        .addTo(map);
+        .setPopup(
+      new mapboxgl.Popup({ offset: 0 }) // add popups
+      .setHTML('<h3>' + location + '</h3>')
 
+  )
+  .addTo(map);
+      
 
-      // new mapboxgl.Popup({ offset: 0 }) // add popups
-      // .setHTML('<h3>' + locationName + '</h3>')
-      // .addTo(map);
 });
 
+
+    map.on('mouseenter', 'places', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'places', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+
 }
+
+   
+
+
+
 
 
 

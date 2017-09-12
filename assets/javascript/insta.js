@@ -187,7 +187,7 @@ console.log(response);
 
 
 		    for (var i = 0; i < latitudeArray.length; i++) {
-		    	addPin(longitudeArray[i], latitudeArray[i], mapImage);
+		    	addPin(longitudeArray[i], latitudeArray[i], mapImage, locationNameArray[i], imageArray[i]);
 			}
 	});	
 }
