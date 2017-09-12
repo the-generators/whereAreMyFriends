@@ -25,7 +25,47 @@ var world_bounds = [
 	[180,90]
 ]
 
+//set the bounds based on the photos
+function setMaxBounds(){
 
+    console.log("latitude ", latitudeArray);
+    console.log("longitude ", longitudeArray);
+
+    var minLat = Math.min.apply(null,latitudeArray);
+    var maxLat = Math.max.apply(null, latitudeArray);
+    var minLng = Math.min.apply(null, longitudeArray);
+    var maxLng = Math.max.apply(null, longitudeArray);
+
+    console.log("lat min ", minLat);
+    console.log("lat max ", maxLat);
+
+    console.log("lng min ", minLng);
+    console.log("lng max ", maxLng);
+
+    var world_bounds = [
+        [minLat,minLng], //Southwest coordinates
+        [maxLat,maxLng]  //Northeast coordinates 
+    ];
+
+};
+
+
+function buildMap(){
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/basic-v9',
+        //center: [,] // starting position [lng, lat]
+        zoom: 0, // starting zoom
+        maxBounds: world_bounds
+
+    });
+    // disable map rotation using right click + drag
+    map.dragRotate.disable();
+
+    // disable map rotation using touch rotation gesture
+    map.touchZoomRotate.disableRotation();
+
+};
 
 var map = new mapboxgl.Map({
     container: 'map',
