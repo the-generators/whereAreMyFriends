@@ -21,8 +21,8 @@ var us_bounds = [
 
 // Sets bounds to the World
 var world_bounds = [
-	[-180,-90],
-	[180,90]
+	[-180,-80],
+	[180,80]
 ]
 
 
