@@ -186,8 +186,6 @@ console.log(response);
 		    var mapImage = 'url("' + mapMarker + '")';
 
 
-
-
 		    for (var i = 0; i < latitudeArray.length; i++) {
 		    	addPin(longitudeArray[i], latitudeArray[i], mapImage);
 			}

@@ -1,3 +1,27 @@
+#profile-pic-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#bg-clear {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 165px;
+	width: 165px;
+	background-color: white;
+}
+
+#bg-gradient {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 175px;
+	width: 175px;
+	background: linear-gradient(to bottom right, #9e147d, #e53649, rgb(255, 246, 71));
+}
+
 .slide-container {
 /*	margin-top: 175px;*/
 }
@@ -62,9 +86,9 @@ form{
 .input-field{
 	margin-top: 0;
 }
-.profile-img{
+/*.profile-img{
 	margin-top: 25px;
-}
+}*/
 table{
 	margin-bottom: 30px;
 	/*background-color: #64ffda;*/
