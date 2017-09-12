@@ -79,32 +79,44 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
    
-
+    var popup = new mapboxgl.Popup({ 
+        offset: 0, 
+        // closeButton: false,
+        // closeOnClick: false
+ }) 
+        .setLngLat(marker.geometry.coordinates)
+        .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + locImage + '"' + '></img>')
 
     // add marker to map
     new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
-        .setPopup(
-      new mapboxgl.Popup({ offset: 0 }) // add popups
-      .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + locImage + '"' + '></img>')
+        .setPopup(popup)
+        .addTo(map);
+      });
+    console.log("yo");
 
-      
+ 
 
-  )
-  .addTo(map);
-      
-console.log("yo");
-});
-
-
-    map.on('mouseenter', 'places', function () {
+    map.on('mouseenter', 'places', function() {
+        // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
+
+ //        // Populate the popup and set its coordinates
+ //        // based on the feature found.
+ //        popup.setLngLat(e.marker.geometry.coordinates)
+ // //            .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + locImage + '"' + '></img>')
+ //            .addTo(map);
     });
 
-    // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'places', function () {
+
+   
+
+ //    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'places', function() {
         map.getCanvas().style.cursor = '';
+        popup.remove();
     });
+
 
 
 }

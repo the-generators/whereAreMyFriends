@@ -185,9 +185,17 @@ a:hover{
 	padding-bottom: 20px;
 }
 
+.mapboxgl-popup-tip {
+    border: 0px;
+}
+
  .mapboxgl-popup {
         max-width: 400px;
+
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        border-style: groove;
+        border-width: 10px;
+        border-color: #aa9fb1#bab;
     }
 body{
 	background-color: black;
