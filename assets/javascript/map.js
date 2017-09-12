@@ -42,9 +42,9 @@ function setMaxBounds(){
     console.log("lng min ", minLng);
     console.log("lng max ", maxLng);
 
-    var world_bounds = [
-        [minLat,minLng], //Southwest coordinates
-        [maxLat,maxLng]  //Northeast coordinates 
+    world_bounds = [
+        [minLng,minLat], //Southwest coordinates
+        [maxLng,maxLat]  //Northeast coordinates 
     ];
 
 };

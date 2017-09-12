@@ -177,15 +177,13 @@ console.log(response);
 			    	}
 			    }
 		    populateSlider();
+        setMaxBounds();
+        buildMap();
 
         } 
 
-
-
         var mapMarker = "assets/images/map-marker.png";
 		    var mapImage = 'url("' + mapMarker + '")';
-
-
 
 
 		    for (var i = 0; i < latitudeArray.length; i++) {
