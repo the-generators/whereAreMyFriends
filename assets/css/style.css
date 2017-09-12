@@ -108,7 +108,9 @@ th, td{
 	display: inline;
 	padding: 5px;
 }
-
+a:hover{
+	text-decoration: underline;
+}
 
 @media only screen and (max-width: 1256px){
 	#title{
@@ -164,6 +166,7 @@ body{
 li{
 	padding-bottom: 5px;
 }
+
 @media only screen and (max-width: 1000px){
 	.profileCol{
 		height: 820px;
