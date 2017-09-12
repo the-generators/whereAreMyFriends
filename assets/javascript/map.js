@@ -85,7 +85,7 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
         // closeOnClick: false
  }) 
         .setLngLat(marker.geometry.coordinates)
-        .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + locImage + '"' + '></img>')
+        .setHTML('<img src=' + '"' + locImage + '"' + '></img>' + '<h5>' + location + '</h5>')
 
     // add marker to map
     new mapboxgl.Marker(el)
