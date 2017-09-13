@@ -47,7 +47,6 @@ map.touchZoomRotate.disableRotation();
 
 function addPin(longitude, latitude, pinImage, location, locImage) {
     var geojson2 = {
-    "id": "places",
     "type": "FeatureCollection",
     "features": [
         {
@@ -89,20 +88,22 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
 
     // add marker to map
     new mapboxgl.Marker(el)
-        .setLngLat(marker.geometry.coordinates)
-        .setPopup(popup)
-        .addTo(map);
-      });
-    console.log("yo");
+            .setLngLat(marker.geometry.coordinates)
+            .setPopup(popup)
+            .addTo(map);
+    
+
+ //    map.on('mouseenter', 'places', function(event) {
+ //        // Change the cursor style as a UI indicator.
+ //        map.getCanvas().style.cursor = 'pointer';
+
+ // //        // Populate the popup and set its coordinates
+ // //        // based on the feature found.
+            
+ //        });
+        console.log("yo");
 
  
-
-    map.on('mouseenter', 'places', function() {
-        // Change the cursor style as a UI indicator.
-        map.getCanvas().style.cursor = 'pointer';
-
- //        // Populate the popup and set its coordinates
- //        // based on the feature found.
  //        popup.setLngLat(e.marker.geometry.coordinates)
  // //            .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + locImage + '"' + '></img>')
  //            .addTo(map);
@@ -112,10 +113,10 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
    
 
  //    // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'places', function() {
-        map.getCanvas().style.cursor = '';
-        popup.remove();
-    });
+    // map.on('mouseleave', 'places', function() {
+    //     map.getCanvas().style.cursor = '';
+    //     popup.remove();
+    // });
 
 
 
