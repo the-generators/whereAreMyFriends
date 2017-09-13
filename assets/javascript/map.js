@@ -87,11 +87,17 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
         .setHTML('<img src=' + '"' + locImage + '"' + '></img>' + '<h5>' + location + '</h5>')
 
     // add marker to map
-    new mapboxgl.Marker(el)
+    var marker = new mapboxgl.Marker(el)
             .setLngLat(marker.geometry.coordinates)
             .setPopup(popup)
             .addTo(map);
     
+    $( ".marker" ).hover(
+  function() {
+    $( this ).append($('<div>' + '<img src=' + '"' + locImage + '"' + '></img>' + '<h5>' + location + '</h5>' + '</div>'));
+  }, function() {
+    $( this ).find( "div:last" ).remove();
+  });
 
  //    map.on('mouseenter', 'places', function(event) {
  //        // Change the cursor style as a UI indicator.
