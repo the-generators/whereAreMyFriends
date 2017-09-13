@@ -132,13 +132,13 @@ getAllUrlParams();
 
 function getUserStats(id) {
 
-	var queryURL2 = "https://api.instagram.com/v1/users/" + id + "/media/recent/?access_token=" + accessToken + "&callback=?";
+  var queryURL2 = "https://api.instagram.com/v1/users/" + id + "/media/recent/?access_token=" + accessToken + "&callback=?";
 
-	$.ajax({
-		    url: queryURL2,
-	        type: "GET",
-	        dataType: "jsonp"
-	}).done(function(response) {
+  $.ajax({
+        url: queryURL2,
+          type: "GET",
+          dataType: "jsonp"
+  }).done(function(response) {
           
           $(".first-name").text(userName);
           $(".user-name").text(userName.toUpperCase());
@@ -146,50 +146,50 @@ function getUserStats(id) {
 
 console.log(response);
 
-		    if (response.data.length === 0) {
+        if (response.data.length === 0) {
           $("#has-been-clause").text(user + " has not been anywhere lately");
           $("#sliderFrame").empty();
-		    }
-		    
-		    else {
-	    	
+        }
+        
+        else {
+        
 
 
 
 
 
-		    	for (var i = 0; i < response.data.length; i++) {
+          for (var i = 0; i < response.data.length; i++) {
 
-		    		if (response.data[i].location != null) {
-
-
-				    	latitude = response.data[i].location.latitude;
-				      longitude = response.data[i].location.longitude;
-				      locationName = response.data[i].location.name;
-				      image = response.data[i].images.low_resolution.url;
+            if (response.data[i].location != null) {
 
 
-			    		latitudeArray.push(latitude);
-			    		longitudeArray.push(longitude);
-			    		locationNameArray.push(locationName);
-			    		imageArray.push(image);
-              						
-			    	}
-			    }
-		    populateSlider();
+              latitude = response.data[i].location.latitude;
+              longitude = response.data[i].location.longitude;
+              locationName = response.data[i].location.name;
+              image = response.data[i].images.low_resolution.url;
+
+
+              latitudeArray.push(latitude);
+              longitudeArray.push(longitude);
+              locationNameArray.push(locationName);
+              imageArray.push(image);
+                          
+            }
+          }
+        populateSlider();
 
         } 
 
 
 
-        var mapMarker = "assets/images/map-marker.png";
-		    var mapImage = 'url("' + mapMarker + '")';
+        var mapMarker = "assets/images/pin7.png";
+        var mapImage = 'url("' + mapMarker + '")';
 
 
-		    for (var i = 0; i < latitudeArray.length; i++) {
-		    	addPin(longitudeArray[i], latitudeArray[i], mapImage, locationNameArray[i], imageArray[i]);
-			}
-	});	
+        for (var i = 0; i < latitudeArray.length; i++) {
+          addPin(longitudeArray[i], latitudeArray[i], mapImage, locationNameArray[i], imageArray[i]);
+      }
+  }); 
 }
 
 
@@ -200,27 +200,27 @@ $(document).ready(function(){
 
 
     $.ajax({
-    	url: queryURL1,
-    	method: "GET",
-    	dataType: "jsonp"
+      url: queryURL1,
+      method: "GET",
+      dataType: "jsonp"
     }).done(function(response) {
 
       console.log(response.data);
 
-    	if ((response.meta.code === 400) || (response.data.length === 0)) {
+      if ((response.meta.code === 400) || (response.data.length === 0)) {
         $("#has-been-clause").text("The username " + user + " cannot be found. Please try a different name.");
         $("#sliderFrame").empty();
 
-    	} else {
-	    	userId = response.data[0].id;
-	    	profilePic = response.data[0].profile_picture;
+      } else {
+        userId = response.data[0].id;
+        profilePic = response.data[0].profile_picture;
         userName = response.data[0].username;
-	    	var fullName= response.data[0].full_name;
-	    	firstName = fullName.split(" ")[0];
+        var fullName= response.data[0].full_name;
+        firstName = fullName.split(" ")[0];
 
 
-    		getUserStats(userId);
-    	}
+        getUserStats(userId);
+      }
 
 
     });

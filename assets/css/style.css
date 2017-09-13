@@ -1,3 +1,54 @@
+nav {
+    border-bottom: 1px solid #d8d8d8;
+}
+nav .brand-logo {
+  margin-left: 20px;
+}
+nav form {
+/*  margin-left: 180px;*/
+  width: 80%;
+  height: 100%;
+}
+
+nav .input-field label.active i {
+    color: black;
+    opacity: .3;
+    margin-top: 60%;
+}
+
+input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid grey;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #d8d8d8;
+    -webkit-box-shadow: 0 1px 0 0 grey;
+    box-shadow: 0 1px 0 0 grey;
+}
+
+nav .input-field {
+    margin: 0;
+    height: 100%;
+}
+
+.marker {
+    display: block;
+    border: none;
+
+    cursor: pointer;
+    padding: 0;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+.mapboxgl-marker {
+    position: absolute;
+    top: -20px;
+    left: 24px;
+    will-change: transform;
+}
+
+
 #profile-pic-container {
 	display: flex;
 	justify-content: center;
@@ -173,7 +224,7 @@ a:hover{
 	background-color: #ffffff;
 	height: 870px;
 	width: 33.333%;
-	border-right: 1px solid black;
+	border-right: 1px solid #d8d8d8;
 }
 #mapDiv{
 	position: absolute;

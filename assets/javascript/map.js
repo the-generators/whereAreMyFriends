@@ -21,8 +21,8 @@ var us_bounds = [
 
 // Sets bounds to the World
 var world_bounds = [
-	[-180,-80],
-	[180,80]
+    [-180,-80],
+    [180,80]
 ]
 
 
@@ -30,7 +30,7 @@ var world_bounds = [
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/hillaryellis37/cj7h31mzu4ahr2ro0uw68r30p',
-  	//center: [,] // starting position [lng, lat]
+    //center: [,] // starting position [lng, lat]
     zoom: 0, // starting zoom
     maxBounds: world_bounds
 });
@@ -54,7 +54,7 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
             "properties": {
                 "imageUrl": image,
                 "message": locationName, 
-                "iconSize": [19, 16]
+                "iconSize": [75, 60]
             },
             "geometry": {
                 "type": "Point",
@@ -87,18 +87,36 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
         .setHTML('<img src=' + '"' + locImage + '"' + '></img>' + '<h5>' + location + '</h5>')
 
     // add marker to map
-    var marker = new mapboxgl.Marker(el)
+    new mapboxgl.Marker(el)
             .setLngLat(marker.geometry.coordinates)
             .setPopup(popup)
             .addTo(map);
     
-   
+
+ //    map.on('mouseenter', 'places', function(event) {
+ //        // Change the cursor style as a UI indicator.
+ //        map.getCanvas().style.cursor = 'pointer';
+
+ // //        // Populate the popup and set its coordinates
+ // //        // based on the feature found.
+            
+ //        });
+        console.log("yo");
+
+ 
+ //        popup.setLngLat(e.marker.geometry.coordinates)
+ // //            .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + locImage + '"' + '></img>')
+ //            .addTo(map);
     });
 
 
    
 
- 
+ //    // Change it back to a pointer when it leaves.
+    // map.on('mouseleave', 'places', function() {
+    //     map.getCanvas().style.cursor = '';
+    //     popup.remove();
+    // });
 
 
 
