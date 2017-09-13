@@ -92,37 +92,13 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
             .setPopup(popup)
             .addTo(map);
     
-    $( ".marker" ).hover(
-  function() {
-    $( this ).append($('<div>' + '<img src=' + '"' + locImage + '"' + '></img>' + '<h5>' + location + '</h5>' + '</div>'));
-  }, function() {
-    $( this ).find( "div:last" ).remove();
-  });
-
- //    map.on('mouseenter', 'places', function(event) {
- //        // Change the cursor style as a UI indicator.
- //        map.getCanvas().style.cursor = 'pointer';
-
- // //        // Populate the popup and set its coordinates
- // //        // based on the feature found.
-            
- //        });
-        console.log("yo");
-
- 
- //        popup.setLngLat(e.marker.geometry.coordinates)
- // //            .setHTML('<h3>' + location + '</h3>' + '<img src=' + '"' + locImage + '"' + '></img>')
- //            .addTo(map);
+   
     });
 
 
    
 
- //    // Change it back to a pointer when it leaves.
-    // map.on('mouseleave', 'places', function() {
-    //     map.getCanvas().style.cursor = '';
-    //     popup.remove();
-    // });
+ 
 
 
 
