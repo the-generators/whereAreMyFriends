@@ -274,11 +274,8 @@ li{
 		width: 100%;
 		height: 90vh;
 		border-bottom: 1px solid white;
-		/*margin: 0 auto;*/
-		/*padding-bottom: 40px;*/
 	}
 	#map{
-		/*height: 500px;*/
 		height: 90vh;
 		}
 	}
