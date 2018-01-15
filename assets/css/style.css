@@ -126,7 +126,7 @@ form{
 	top: 100px;
 }
 .titleDiv{
-	min-width: 545px;
+	/*min-width: 545px;*/
 	background-image: url("../images/bg.jpg");
 	background-size: cover;
 	width: 100%;
