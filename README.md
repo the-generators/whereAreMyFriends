@@ -6,7 +6,7 @@ Bases on user input display the last posted user location on a map. The pin will
 
 ## visit website
 
-https://vrooms.github.io/entrance/
+https://the-generators.github.io/whereAreMyFriends/
 
 ## Scrrenshot
 
