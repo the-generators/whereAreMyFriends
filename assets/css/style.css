@@ -201,27 +201,7 @@ a:hover{
 	text-decoration: underline;
 }
 
-/*@media only screen and (max-width: 1256px){
-	#title{
-	margin: 120px 0 0 0;
-	}
-}
 
-@media only screen and (min-width: 1300px){
-	#title{
-	margin: 300px 0 0 0;
-	}
-}
-@media only screen and (max-width: 750px){
-	#title{
-	margin: 60px 0 0 0;
-	}
-}*/
-@media only screen and (max-width: 900px){
-	h1{
-		font-size: 35px;
-	}
-}
 
 .page-footer{
 	padding-top: 20px;
@@ -271,21 +251,37 @@ li{
 	padding-bottom: 5px;
 }
 
+
+@media only screen and (max-width: 900px){
+	h1{
+		font-size: 35px;
+	}
+}
+
 @media only screen and (max-width: 1000px){
 	.profileCol{
-		height: 820px;
-		width: 100%;
+		/*height: 820px;*/
+		/*width: 100%;*/
+		display: none;
+	}
+	.page-footer{
+		display: none;
+	}
+	nav{
+		height: 10vh;
 	}
 	#mapDiv{
 		position: static;
 		top: 0;
-		width: 80%;
+		width: 100%;
+		height: 90vh;
 		border-bottom: 1px solid white;
-		margin: 0 auto;
-		padding-bottom: 40px;
+		/*margin: 0 auto;*/
+		/*padding-bottom: 40px;*/
 	}
 	#map{
-		height: 500px;
+		/*height: 500px;*/
+		height: 90vh;
 		}
 	}
 }
