@@ -28,9 +28,25 @@
 
     <body>
 
-        <img class="responsive-img entranceImg" src="assets/images/bg.jpg">
-        
         <div class="container-fluid titleDiv">
+          <br>
+          <div id="titleContainer">
+            <div id="titleContent">
+              <h1 class="textWhite">Map My Friends!</h1>
+              <p class="textWhite">Type your friend's Instagram username to see where they've been </p>
+            </div>
+            <form action="results.html" method="GET" id="enterUsername">
+                <div class="input-field">
+                  <input type="text" class="white-text" name="username" id="instagram-input" >
+                  <label for="instagram-input">Enter Instagram username: </label>
+                  <input type="submit" class="btn btn-md btn-primary" id="submit-btn" value="submit">
+                </div>
+            </form>
+          </div>
+            
+        </div>
+        
+<!--         <div class="container-fluid titleDiv entranceImg">
           <div class="row">
             <div class="col s12">
               <div id="title">
@@ -50,7 +66,7 @@
               </div>
             </form>
           </div>
-        </div>
+        </div> -->
 
     
    	</body>
