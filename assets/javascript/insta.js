@@ -3,7 +3,7 @@ var clientID = "5108270b430c4a72a1df1ea3478f6f22";
 // for temp access token: https://api.instagram.com/oauth/authorize/?client_id=5108270b430c4a72a1df1ea3478f6f22&redirect_uri=https://the-generators.github.io/whereAreMyFriends/&response_type=token
 var clientSecret = "0b9dee0918c742b2905efa66af1e02de";
 var getTokenURL = "https://api.instagram.com/oauth/authorize/?client_id="+ clientID + "5108270b430c4a72a1df1ea3478f6f22&redirect_uri=" + redirectURI + "&response_type=token";
-var accessToken = "298408134.5108270.5e9103a09269400f832a386f5319a114";
+var accessToken = "31062022.5108270.403b5288301040348d1a3e9ca7b3e736";
 
 var userId;
 var profilePic;
