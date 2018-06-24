@@ -101,7 +101,6 @@ function addPin(longitude, latitude, pinImage, location, locImage) {
  // //        // based on the feature found.
             
  //        });
-        console.log("yo");
 
  
  //        popup.setLngLat(e.marker.geometry.coordinates)

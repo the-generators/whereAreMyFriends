@@ -3,6 +3,7 @@ var clientID = "6992d3db93164737a213a26f41c54378";
 // for temp access token: https://api.instagram.com/oauth/authorize/?client_id=5108270b430c4a72a1df1ea3478f6f22&redirect_uri=https://the-generators.github.io/whereAreMyFriends/&response_type=token
 var clientSecret = "5b7629b75f2142339cf29355c92ada37";
 var getTokenURL = "https://api.instagram.com/oauth/authorize/?client_id="+ clientID + "&redirect_uri=" + redirectURI + "&response_type=token";
+// 
 var accessToken = "1348727444.6992d3d.a58b6f0704e1470eb39191cdfac009a7";
 
 
@@ -145,7 +146,7 @@ function getUserStats(id) {
           $(".user-name").text(userName.toUpperCase());
           $(".profile-img").attr("src", profilePic);
 
-console.log(response);
+// console.log(response);
 
         if (response.data.length === 0) {
           $("#has-been-clause").text(user + " has not been anywhere lately");
@@ -196,28 +197,30 @@ console.log(response);
 
 $(document).ready(function(){
 
-
-  var queryURL1 = "https://api.instagram.com/v1/users/search?q=" + user + "&access_token=" + accessToken + "&callback=?";
-
+  var queryURL1 = "https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=?";
 
     $.ajax({
       url: queryURL1,
       method: "GET",
       dataType: "jsonp"
     }).done(function(response) {
-
-      console.log(response.data);
+      // console.log(response.data);
 
       if ((response.meta.code === 400) || (response.data.length === 0)) {
         $("#has-been-clause").text("The username " + user + " cannot be found. Please try a different name.");
         $("#sliderFrame").empty();
 
       } else {
-        userId = response.data[0].id;
-        profilePic = response.data[0].profile_picture;
-        userName = response.data[0].username;
-        var fullName= response.data[0].full_name;
-        firstName = fullName.split(" ")[0];
+        userId = response.data.id;
+        profilePic = response.data.profile_picture;
+        userName = response.data.username;
+        var fullName= response.data.full_name;
+        firstName = fullName.split(" ");
+        // userId = response.data[0].id;
+        // profilePic = response.data[0].profile_picture;
+        // userName = response.data[0].username;
+        // var fullName= response.data[0].full_name;
+        // firstName = fullName.split(" ")[0];
 
 
         getUserStats(userId);
