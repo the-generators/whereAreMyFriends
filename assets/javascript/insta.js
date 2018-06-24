@@ -1,10 +1,10 @@
-
 var redirectURI = "https://the-generators.github.io/whereAreMyFriends/";
 var clientID = "6992d3db93164737a213a26f41c54378";
 // for temp access token: https://api.instagram.com/oauth/authorize/?client_id=5108270b430c4a72a1df1ea3478f6f22&redirect_uri=https://the-generators.github.io/whereAreMyFriends/&response_type=token
 var clientSecret = "5b7629b75f2142339cf29355c92ada37";
-var getTokenURL = "https://api.instagram.com/oauth/authorize/?client_id="+ clientID + "6992d3db93164737a213a26f41c54378&redirect_uri=" + redirectURI + "&response_type=token";
+var getTokenURL = "https://api.instagram.com/oauth/authorize/?client_id="+ clientID + "&redirect_uri=" + redirectURI + "&response_type=token";
 var accessToken = "1348727444.6992d3d.a58b6f0704e1470eb39191cdfac009a7";
+
 
 var userId;
 var profilePic;
